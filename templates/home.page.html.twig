@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% set TEST_VARIABLE = "TEST" %}
+
+{% block title %} {{ list[0].name }} {% endblock %}
+
+{% block body %}
+    <h1>{{ TEST_VARIABLE }}</h1>
+    <ul>
+        {% for data in list %}
+            {% if data.name != "asd" %}
+                {% include 'components/todo.task.component.html.twig' with { "name": data.name, "description": data.description } %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
