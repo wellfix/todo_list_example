@@ -1,0 +1,10 @@
+{% block tasks %}
+<div class="column">
+<h2> {{ key }} </h2>
+<ul>
+{% for task in list %}
+    {% include "/components/task.html.twig" with {'task': task} %}
+{% endfor %}
+</ul>
+</div>
+{% endblock %}

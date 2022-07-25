@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% block title %}
+What to do with Twig
+{% endblock %}
+{% block body %}
+<h1>To do list</h1>
+<div class="container">
+    {% for key, list in lists %}
+        {% include "components/tasks.html.twig" with {'list': list, 'key': key} %}
+    {% endfor %}
+</div>
+<div class="footer">
+<a href="{{ path('add_task') }}" class="link"><button class='home-btn'> Add new Task</button></a>
+</div>
+{% endblock %}

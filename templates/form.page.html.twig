@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h2>Add new task!</h2>
+    <div class="container form-container">
+        {{form_start(form, { 'attr': {'class': 'form'}}) }}
+        {% include "components/field.form.html.twig" with {'field': form.name} %}
+        {% include "components/field.form.html.twig" with {'field': form.description} %}
+        {% include "components/field.form.html.twig" with {'field': form.importance} %}
+        <div class="field">
+            {{form_row(form.save, { 'attr': {'class': 'save'}}) }}
+        </div>
+        {{form_end(form)}}
+    </div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% block form_field %}
+<div class="field">
+    {{ form_label(field, null, { 'label_attr': {'class': 'foo'}})}} <br>
+    {{ form_widget(field, { 'attr': {'class': 'bar'}}) }} 
+</div>
+{% endblock %}

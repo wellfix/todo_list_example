@@ -18,8 +18,17 @@ class HomePageController extends AbstractController
     function homePage(ToDoListRepository $doListRepository): Response
     {
         $list = $doListRepository->findAll();
-        $title = "I am the title of this page";
-        return $this->render('home.page.html.twig', ['list' => $list, 'title' => $title]);
+        $lists = [];
+        $level_of_importance = ['Very important', 'Important', 'Normal', 'Not important'];
+        foreach ($level_of_importance as $level){
+            $lists[$level] = array_filter($list, function ($item) use ($level) {
+                if ($item->getImportance() == $level) {
+                    return true;
+                }
+                return false;
+            });
+        } 
+        return $this->render('home.page.html.twig', ['list' => $lists, 'lists' => $lists]);
     }
 
     #[Route('/add', name: "add_task", methods: ['GET', 'POST'])]

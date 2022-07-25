@@ -1,3 +1,69 @@
 body {
-    background-color: white;
+    background-color: whitesmoke;
+    font-family: 'Comic Sans MS';
+    color: darkorchid;
+}
+
+.container {
+    display: flex;
+}
+
+.column {
+    width: 25%;
+    border: 3px solid darkorchid;
+}
+
+.column:last-child {
+    border-left: 0;
+}
+
+.column:nth-child(2) {
+    border-left: 0;
+    border-right: 0;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.save {
+    float: right;
+}
+
+.form-container {
+    width: 100%;
+}
+
+.form {
+    margin: auto;
+    width: 25%;
+}
+.foo, .bar {
+    width: 100%;
+}
+
+.save {
+    margin: 5% 0;
+
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    font-family: 'Comic Sans MS';
+}
+
+.home-btn {
+    width: 100%;
+    background-color: darkorchid;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-family: 'Comic Sans MS';
+    padding: 0.5% 0;
+}
+
+.footer {
+    margin: 1% auto;
+    width: 50%;
 }

@@ -20,6 +20,9 @@ class ToDoList
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $importance = null;
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -47,5 +50,17 @@ class ToDoList
         $this->description = $description;
 
         return $this;
+    }
+
+    public function setImportance(string $importance): self
+    {
+        $this->importance = $importance;
+
+        return $this;
+    }
+
+    public function getImportance(): ?string
+    {
+        return $this->importance;
     }
 }
